@@ -32,7 +32,7 @@ export default function DeliveryPage() {
       name: 'Samudera',
       description: 'Regional shipping expertise',
       logo: 'Samudera',
-      image: '/evergreen.jpg',
+      image: '/samuderaship.jpg',
       info: 'Samudera specializes in regional shipping with deep expertise in Southeast Asian markets. Provides reliable and cost-effective shipping solutions for regional trade.',
     },
   ];

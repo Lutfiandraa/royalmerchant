@@ -1,10 +1,38 @@
 'use client';
 
 import Link from 'next/link';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 
 export default function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isVisible, setIsVisible] = useState(true);
+  const [lastScrollY, setLastScrollY] = useState(0);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const currentScrollY = window.scrollY;
+      
+      // Jika scroll posisi di atas 100px, baru aktifkan hide/show
+      if (currentScrollY < 100) {
+        setIsVisible(true);
+      } else {
+        // Scroll down -> hide, scroll up -> show
+        if (currentScrollY > lastScrollY) {
+          setIsVisible(false); // Scroll ke bawah, hide navbar
+        } else {
+          setIsVisible(true); // Scroll ke atas, show navbar
+        }
+      }
+      
+      setLastScrollY(currentScrollY);
+    };
+
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, [lastScrollY]);
 
   const menuItems = [
     { href: '/', label: 'Home' },
@@ -15,7 +43,11 @@ export default function Navbar() {
   ];
 
   return (
-    <nav className="fixed top-4 left-1/2 -translate-x-1/2 z-50 bg-black/30 backdrop-blur-md shadow-2xl border border-gray-800/50 rounded-[40px] w-[95%] sm:w-[90%] md:w-[85%] lg:w-[80%] xl:w-[75%] max-w-7xl">
+    <nav 
+      className={`fixed top-4 left-1/2 -translate-x-1/2 z-50 bg-black/30 backdrop-blur-md shadow-2xl border border-gray-800/50 rounded-[40px] w-[95%] sm:w-[90%] md:w-[85%] lg:w-[80%] xl:w-[75%] max-w-7xl transition-transform duration-300 ease-in-out ${
+        isVisible ? 'translate-y-0' : '-translate-y-[120%]'
+      }`}
+    >
       <div className="mx-auto px-3 sm:px-4 md:px-6 lg:px-8">
         <div className="flex h-14 sm:h-16 items-center justify-between">
           {/* Logo */}

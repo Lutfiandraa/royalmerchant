@@ -10,14 +10,6 @@ export default function Footer() {
               Specializes of coconut charcoal for shisha and BBQ. Export quality from Indonesia.
             </p>
           </div>
-
-          {/* Contact Info */}
-          <div className="space-y-4">
-            <h3 className="text-lg font-semibold text-white">Contact</h3>
-            <p className="text-sm text-gray-400">
-              Get in touch with us for inquiries and orders.
-            </p>
-          </div>
         </div>
 
         {/* Copyright */}
