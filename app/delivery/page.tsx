@@ -13,27 +13,95 @@ export default function DeliveryPage() {
       logo: 'Maersk',
       image: '/maersk.jpg',
       info: 'Maersk offers consistent weekly departures from Surabaya port, ensuring timely deliveries to destinations worldwide. With extensive global network coverage and reliable transit times.',
+      expedition: {
+        routes: [
+          { destination: 'Europe', transitTime: '25-30 days', frequency: 'Weekly', ports: 'Rotterdam, Hamburg, Antwerp' },
+          { destination: 'Middle East', transitTime: '15-20 days', frequency: 'Weekly', ports: 'Jebel Ali, Dammam, Jeddah' },
+          { destination: 'North America', transitTime: '30-35 days', frequency: 'Weekly', ports: 'Los Angeles, New York, Savannah' },
+          { destination: 'Asia Pacific', transitTime: '10-15 days', frequency: 'Weekly', ports: 'Singapore, Hong Kong, Shanghai' },
+        ],
+        containerTypes: ['20ft Container', '40ft Container', '40ft High Cube', 'Refrigerated Container'],
+        services: ['FCL (Full Container Load)', 'LCL (Less than Container Load)', 'Door-to-Door', 'Port-to-Port'],
+        advantages: [
+          'Weekly departures from Surabaya port',
+          'Global network coverage to 130+ countries',
+          'Real-time cargo tracking system',
+          'Comprehensive insurance options',
+          'Expert handling of bulk cargo',
+        ],
+      },
     },
     {
       name: 'Evergreen',
       description: 'Efficient container services',
       logo: 'Evergreen',
       image: '/evergreen.jpg',
-      info: 'Evergreen provides efficient container services with comprehensive logistics solutions. Known for reliable shipping schedules and excellent cargo handling capabilities.',
+      info: 'Evergreen Line operates an extensive global container shipping network with 150+ weekly services connecting 75 countries across 204 ports. With a modern fleet of 228 vessels and 1.84 million TEU capacity, Evergreen provides efficient container services with comprehensive logistics solutions.',
+      expedition: {
+        routes: [
+          { destination: 'Europe', transitTime: '28-32 days', frequency: 'Weekly', ports: 'Rotterdam, Hamburg, Felixstowe, Le Havre' },
+          { destination: 'Middle East', transitTime: '18-22 days', frequency: 'Weekly', ports: 'Jebel Ali, Dammam, Jeddah, Port Said' },
+          { destination: 'North America', transitTime: '32-38 days', frequency: 'Weekly', ports: 'Los Angeles, Long Beach, New York, Savannah' },
+          { destination: 'Asia Pacific', transitTime: '8-12 days', frequency: 'Weekly', ports: 'Singapore, Hong Kong, Shanghai, Busan' },
+        ],
+        containerTypes: ['20ft Container', '40ft Container', '40ft High Cube', 'Refrigerated Container', 'Open Top Container'],
+        services: ['FCL (Full Container Load)', 'LCL (Less than Container Load)', 'Door-to-Door', 'Port-to-Port', 'Intermodal Services'],
+        advantages: [
+          '150+ weekly services connecting 75 countries',
+          'Modern fleet with 1.84 million TEU capacity',
+          '295 global offices serving 315+ locations',
+          'Comprehensive intermodal transportation',
+          'Advanced e-Commerce booking platform',
+        ],
+      },
     },
     {
       name: 'OOCL',
       description: 'Fast Europe-bound shipping',
       logo: 'OOCL',
       image: '/OOCLshipping.jpg',
-      info: 'Orient Overseas Container Line (OOCL) is a leading global container shipping company with extensive network coverage, particularly strong on Asia-Europe routes. OOCL provides fast and reliable shipping services with efficient transit times, advanced container management systems, and comprehensive logistics solutions. Known for operational excellence and customer-focused service, OOCL ensures timely delivery of cargo to major ports worldwide.',
+      info: 'Orient Overseas Container Line (OOCL) is a leading global container shipping company with extensive network coverage, particularly strong on Asia-Europe routes. OOCL connects 78 countries across 212 ports with 144 distinct services, providing fast and reliable shipping with efficient transit times.',
+      expedition: {
+        routes: [
+          { destination: 'Europe', transitTime: '24-28 days', frequency: 'Weekly', ports: 'Rotterdam, Hamburg, Antwerp, Southampton' },
+          { destination: 'Middle East', transitTime: '16-20 days', frequency: 'Weekly', ports: 'Jebel Ali, Dammam, Jeddah, Salalah' },
+          { destination: 'North America', transitTime: '28-33 days', frequency: 'Weekly', ports: 'Los Angeles, Long Beach, New York, Vancouver' },
+          { destination: 'Asia Pacific', transitTime: '7-14 days', frequency: 'Weekly', ports: 'Singapore, Hong Kong, Shanghai, Tokyo' },
+        ],
+        containerTypes: ['20ft Container', '40ft Container', '40ft High Cube', 'Refrigerated Container', 'Specialized Containers'],
+        services: ['FCL (Full Container Load)', 'LCL (Less than Container Load)', 'Door-to-Door', 'Port-to-Port', 'Reefer Services', 'Dangerous Goods Handling'],
+        advantages: [
+          'Strong Asia-Europe route expertise',
+          '144 services connecting 78 countries',
+          'Advanced container management systems',
+          'Comprehensive reefer and specialized cargo handling',
+          'Real-time sailing schedule and tracking',
+        ],
+      },
     },
     {
       name: 'Samudera',
       description: 'Regional shipping expertise',
       logo: 'Samudera',
       image: '/samuderaship.jpg',
-      info: 'Samudera specializes in regional shipping with deep expertise in Southeast Asian markets. Provides reliable and cost-effective shipping solutions for regional trade.',
+      info: 'Samudera Shipping Line specializes in regional shipping with deep expertise in Southeast Asian markets. Operating feeder and liner services across Southeast Asia, Indian Subcontinent, Far East, and Middle East, providing reliable and cost-effective shipping solutions for regional trade.',
+      expedition: {
+        routes: [
+          { destination: 'Southeast Asia', transitTime: '5-10 days', frequency: 'Weekly', ports: 'Singapore, Port Klang, Bangkok, Ho Chi Minh' },
+          { destination: 'India', transitTime: '12-18 days', frequency: 'Bi-weekly', ports: 'Mumbai, Chennai, Kolkata, Nhava Sheva' },
+          { destination: 'Middle East', transitTime: '18-25 days', frequency: 'Bi-weekly', ports: 'Jebel Ali, Dammam, Jeddah' },
+          { destination: 'China', transitTime: '10-15 days', frequency: 'Weekly', ports: 'Shanghai, Ningbo, Shenzhen, Hong Kong' },
+        ],
+        containerTypes: ['20ft Container', '40ft Container', '40ft High Cube'],
+        services: ['Feeder Services (SOC)', 'Liner Services (COC)', 'Port-to-Port', 'Regional Routes'],
+        advantages: [
+          'Deep expertise in Southeast Asian markets',
+          'Cost-effective regional shipping solutions',
+          'Regular routes connecting major Indonesian ports',
+          'Feeder services for main line operators',
+          'Local knowledge and regional network coverage',
+        ],
+      },
     },
   ];
 
@@ -101,7 +169,7 @@ export default function DeliveryPage() {
           onClick={closeCard}
         >
           <div
-            className="relative bg-gray-900 rounded-lg border border-gray-800 shadow-2xl max-w-md w-full p-6 sm:p-8 animate-in"
+            className="relative bg-green-950 rounded-lg border border-green-800 shadow-2xl max-w-2xl w-full max-h-[90vh] overflow-y-auto p-6 sm:p-8 animate-in"
             onClick={(e) => e.stopPropagation()}
           >
             <button
@@ -131,9 +199,83 @@ export default function DeliveryPage() {
                     {partner.name}
                   </h3>
                   <div className="w-12 h-1 bg-green-600 mb-4"></div>
-                  <p className="text-sm sm:text-base text-gray-300 leading-relaxed">
+                  <p className="text-sm sm:text-base text-gray-300 leading-relaxed mb-6">
                     {partner.info}
                   </p>
+                  
+                  {/* Expedition Information */}
+                  {partner.expedition && (
+                    <div className="space-y-6 mb-6">
+                      {/* Routes */}
+                      <div>
+                        <h4 className="text-lg font-semibold text-white mb-3">Shipping Routes</h4>
+                        <div className="space-y-3">
+                          {partner.expedition.routes.map((route, idx) => (
+                            <div key={idx} className="bg-gray-800/50 rounded-lg p-3 border border-gray-700">
+                              <div className="flex justify-between items-start mb-2">
+                                <span className="text-white font-medium">{route.destination}</span>
+                                <span className="text-green-400 text-sm">{route.transitTime}</span>
+                              </div>
+                              <div className="text-xs text-gray-400 space-y-1">
+                                <p>Frequency: {route.frequency}</p>
+                                <p>Ports: {route.ports}</p>
+                              </div>
+                            </div>
+                          ))}
+                        </div>
+                      </div>
+
+                      {/* Container Types */}
+                      <div>
+                        <h4 className="text-lg font-semibold text-white mb-3">Container Types</h4>
+                        <div className="flex flex-wrap gap-2">
+                          {partner.expedition.containerTypes.map((type, idx) => (
+                            <span key={idx} className="px-3 py-1 bg-gray-800 text-gray-300 rounded-full text-sm border border-gray-700">
+                              {type}
+                            </span>
+                          ))}
+                        </div>
+                      </div>
+
+                      {/* Services */}
+                      <div>
+                        <h4 className="text-lg font-semibold text-white mb-3">Available Services</h4>
+                        <div className="grid grid-cols-2 gap-2">
+                          {partner.expedition.services.map((service, idx) => (
+                            <div key={idx} className="bg-gray-800/50 rounded p-2 text-sm text-gray-300 border border-gray-700">
+                              {service}
+                            </div>
+                          ))}
+                        </div>
+                      </div>
+
+                      {/* Advantages */}
+                      <div>
+                        <h4 className="text-lg font-semibold text-white mb-3">Key Advantages</h4>
+                        <ul className="space-y-2">
+                          {partner.expedition.advantages.map((advantage, idx) => (
+                            <li key={idx} className="flex items-start text-sm text-gray-300">
+                              <span className="text-green-500 mr-2">✓</span>
+                              <span>{advantage}</span>
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
+                    </div>
+                  )}
+
+                  {/* Pick Expedition Button */}
+                  {partner.expedition && (
+                    <button
+                      onClick={() => {
+                        // Handle pick expedition action
+                        alert(`${partner.name} expedition selected! Please contact us for booking details.`);
+                      }}
+                      className="w-full bg-green-600 hover:bg-green-700 text-white font-semibold py-3 px-6 rounded-lg transition-colors duration-200 shadow-lg hover:shadow-xl"
+                    >
+                      Pick Expedition
+                    </button>
+                  )}
                 </div>
               ))}
           </div>

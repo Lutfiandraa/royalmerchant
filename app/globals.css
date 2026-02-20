@@ -18,6 +18,14 @@ body {
   font-family: var(--font-geist-sans), Arial, Helvetica, sans-serif;
 }
 
+/* Safe area for notched devices (e.g. iPhone) */
+.safe-area-inset {
+  padding-left: env(safe-area-inset-left, 0);
+  padding-right: env(safe-area-inset-right, 0);
+  padding-top: env(safe-area-inset-top, 0);
+  padding-bottom: env(safe-area-inset-bottom, 0);
+}
+
 @keyframes fadeIn {
   from {
     opacity: 0;
@@ -46,4 +54,29 @@ body {
 
 .animate-in {
   animation: zoomIn 0.3s ease-out;
+}
+
+/* Features section ticker (Natural, Quality, Fine Process, Layering) */
+.features-ticker-track {
+  display: flex;
+  gap: 2rem;
+  width: max-content;
+  animation: features-ticker 28s linear infinite;
+}
+.features-ticker-item {
+  min-width: 140px;
+  flex-shrink: 0;
+}
+@media (min-width: 640px) {
+  .features-ticker-item {
+    min-width: 160px;
+  }
+}
+@keyframes features-ticker {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
 }

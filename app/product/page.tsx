@@ -1,6 +1,7 @@
 'use client';
 
 import { useState } from 'react';
+import Link from 'next/link';
 
 export default function ProductPage() {
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -11,13 +12,13 @@ export default function ProductPage() {
       id: 1,
       title: 'Premium Coconut Charcoal Briquettes',
       description: 'High-quality coconut shell charcoal briquettes perfect for shisha and BBQ. Clean burn, low ash, long-lasting heat.',
-      image: '/handcharcoal.jpg',
+      image: '/briquttes.jpg',
     },
     {
       id: 2,
       title: 'Coconut Charcoal Briquettes',
       description: 'Premium quality briquettes crafted for shisha and BBQ markets worldwide.',
-      image: '/handcharcoal.jpg',
+      image: '/coconutshell.jpg',
     },
     {
       id: 3,
@@ -122,12 +123,12 @@ export default function ProductPage() {
                             {product.description}
                           </p>
                           <div className="flex flex-col sm:flex-row gap-x-4 gap-y-3">
-                            <button className="px-6 py-3 bg-green-600 hover:bg-green-700 text-white font-semibold rounded-lg transition-colors duration-300">
+                            <Link
+                              href="/contact"
+                              className="px-6 py-3 bg-green-600 hover:bg-green-700 text-white font-semibold rounded-lg transition-colors duration-300 text-center"
+                            >
                               Get Quotation
-                            </button>
-                            <button className="px-6 py-3 border border-gray-600 hover:border-gray-400 text-white font-semibold rounded-lg transition-colors duration-300">
-                              Specification
-                            </button>
+                            </Link>
                           </div>
                         </div>
                       </div>

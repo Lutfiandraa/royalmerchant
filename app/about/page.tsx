@@ -2,8 +2,9 @@ export default function AboutPage() {
   return (
     <main className="min-h-screen bg-black page-transition">
       {/* Main Content Section */}
+      {/* Di responsif: woodcharcoal.jpg memanjang ke bawah seperti Home (charcoaldefault.jpg) */}
       <section 
-        className="relative py-12 sm:py-16 md:py-20 min-h-[400px] sm:min-h-[500px] md:min-h-[600px] flex items-center bg-cover bg-center bg-no-repeat"
+        className="relative flex min-h-[100dvh] min-h-[100vh] items-center bg-cover bg-center bg-no-repeat py-12 sm:min-h-[500px] sm:py-16 md:min-h-[600px] md:py-20"
         style={{
           backgroundImage: 'url(/woodcharcoal.jpg)',
           backgroundSize: 'cover',
